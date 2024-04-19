@@ -83,7 +83,7 @@ router.delete('/books/:id', auth, async (req, res) => {
 router.patch('/books/:id', auth, async (req, res) => {
     const _id = req.params.id
     const updates = Object.keys(req.body)
-    const allowedUpdates = ['tile', 'completed']
+    const allowedUpdates = ['title', 'completed', 'author']
     const isValidOperation = updates.every(update => allowedUpdates.includes(update))
 
     if(!isValidOperation) {
